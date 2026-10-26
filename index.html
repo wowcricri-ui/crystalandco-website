@@ -16,6 +16,102 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#F8F5EF">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://crystalandco.co/#organization",
+   "name": "C&Co. 晶品",
+   "legalName": "晶品創意事業有限公司",
+   "alternateName": [
+    "Crystal & Collective Ltd.",
+    "C&Co.",
+    "晶品",
+    "Crystal and Collective"
+   ],
+   "url": "https://crystalandco.co/",
+   "logo": "https://crystalandco.co/assets/logo.png",
+   "image": "https://crystalandco.co/assets/og-image.jpg",
+   "slogan": "讓好品牌被看見，讓送禮更有意義。",
+   "description": "C&Co. 晶品（Crystal & Collective Ltd.）是台灣的企業禮品策略與品牌合作平台，自2017年起為奢侈精品、醫療製藥、金融保險、時尚品牌、飲料酒類等多元產業，提供企業禮品、專屬禮品策劃與年度企業禮品策略顧問服務，並以 Taiwan Value 為選品核心，串聯值得被看見的台灣好品牌。",
+   "foundingDate": "2017",
+   "email": "connect@crystalandco.co",
+   "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "TW"
+   },
+   "areaServed": "TW",
+   "knowsAbout": [
+    "企業禮品",
+    "客製化禮品",
+    "貴賓禮",
+    "VIP禮品",
+    "品牌限定合作",
+    "禮品策劃",
+    "企業禮品策略顧問",
+    "Corporate Gifting",
+    "Brand Partnerships"
+   ],
+   "sameAs": [
+    "https://www.instagram.com/crystalandcollective/",
+    "https://line.me/R/ti/p/%40968veimr",
+    "https://catalogue.crystalandco.co"
+   ],
+   "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": "connect@crystalandco.co",
+    "availableLanguage": [
+     "zh-Hant",
+     "en"
+    ]
+   },
+   "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "C&Co. 晶品服務",
+    "itemListElement": [
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "企業禮品 Standard Corporate Gift",
+       "description": "單次採購專案：晶品獨家／晶品嚴選商品，規格成熟穩定，並提供客製化服務。適合需求明確、需要快速執行的企業。"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "專屬禮品策劃 Gift Strategy Planning",
+       "description": "單次策劃專案：打造獨一無二的限定禮品或禮盒，兼顧品牌策略與商業可行性，提供策略／設計提案與執行規劃。"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "年度策略顧問 Corporate Strategic Consulting",
+       "description": "長期策略夥伴：B2B 企業禮品策略顧問諮詢、商品組合與資源整合規劃，協助企業建立可持續的禮品策略。"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://crystalandco.co/#website",
+   "url": "https://crystalandco.co/",
+   "name": "C&Co. 晶品",
+   "inLanguage": "zh-Hant",
+   "publisher": {
+    "@id": "https://crystalandco.co/#organization"
+   }
+  }
+ ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Noto+Serif+TC:wght@300;400;500&amp;family=Noto+Sans+TC:wght@300;400;500&amp;display=swap">
@@ -34,6 +130,14 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 .ft-link{text-decoration:none}
 .ft-link:hover{text-decoration:underline}
 .cp-part{white-space:nowrap}
+.ind-dot{color:#B89B72;margin:0 0.75em}
+.dot-m{display:none}
+.mq{-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mq-track{animation:mq 90s linear infinite}
+.mq:hover .mq-track{animation-play-state:paused}
+.jy{-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 60%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 60%,transparent 100%)}
+@media (prefers-reduced-motion:reduce){.mq-track{animation:none}}
 @media (max-width:640px){
 .ct-box{padding:48px 20px !important;gap:40px !important}
 .nc-card{padding:32px 22px !important}
@@ -41,7 +145,11 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 .nc-dots{display:none !important}
 .nc-mail{align-self:flex-start !important}
 .cp-sep{display:none}
+.ind-line{font-size:15px !important;letter-spacing:0.1em !important}
+.ind-dot{margin:0 0.5em}
+.mq-logo{margin:0 22px !important;transform:scale(0.85)}
 .br-d{display:none}
+.dot-m{display:inline}
 .nav-cta{font-size:13px !important;padding:8px 18px !important;min-height:40px !important;letter-spacing:0.08em !important}
 .cp-part{display:block}
 }
@@ -59,9 +167,9 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 <a href="#services" style="text-decoration: none;">晶品服務</a>
 <a href="#cases" style="text-decoration: none;">專屬策劃</a>
 <a href="#brands" style="text-decoration: none;">合作品牌</a>
-<a href="https://catalogue.crystalandco.co" style="text-decoration: none;">晶選良品</a>
+<a target="_blank" rel="noopener" href="https://catalogue.crystalandco.co" style="text-decoration: none;">晶選良品</a>
 <a href="#about" style="text-decoration: none;">關於晶品</a>
-<a href="https://calendar.app.google/cCXVzgeoHbBhTNv5A" class="btn-f nav-cta" style="text-decoration: none; background: #4B4948; color: #F8F5EF; padding: 10px 26px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; letter-spacing: 0.12em;">預約30分鐘諮詢</a>
+<a target="_blank" rel="noopener" href="https://calendar.app.google/cCXVzgeoHbBhTNv5A" class="btn-f nav-cta" style="text-decoration: none; background: #4B4948; color: #F8F5EF; padding: 10px 26px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; letter-spacing: 0.12em;">預約30分鐘諮詢</a>
 </div>
 </nav>
 </header>
@@ -70,9 +178,9 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 <section id="top" class="kv-hero" style="min-height: 720px; display: flex; align-items: center; justify-content: center; padding: 120px 32px; box-sizing: border-box;">
 <div style="max-width: 820px; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center;">
 <p style="margin: 0; font-family: 'EB Garamond', serif; font-style: italic; font-size: 30px; line-height: 1.2; color: #7D5F3C;">the meaningful one.</p>
-<h1 style="margin: 0; font-family: 'Noto Serif TC', serif; font-weight: 400; font-size: clamp(34px, 5vw, 58px); line-height: 1.45; letter-spacing: 0.1em;">讓好品牌被看見，<br>讓送禮更有意義。</h1>
+<h1 style="margin: 0; padding-left: 0.18em; font-family: 'Noto Serif TC', serif; font-weight: 400; font-size: clamp(28px, 3.6vw, 44px); line-height: 1.7; letter-spacing: 0.18em;">讓好品牌被看見<br>讓送禮更有意義</h1>
 <div style="width: 48px; height: 1px; background: #B89B72;"></div>
-<p style="margin: 0; font-size: 17px; color: #4B4948;">我們相信，禮品不只是商品，而是品牌價值的載體。<br class="br-d">C&amp;Co. 晶品以策略顧問的角色，協助企業透過禮品建立更深層的品牌連結，也讓值得被看見的好品牌，走進每一份企業禮物。</p>
+<p style="margin: 0; font-size: 16px; line-height: 2; color: #4B4948;">我們相信，禮品是品牌價值的載體。C&amp;Co. 晶品透過策略選品與品牌合作，<br class="br-d">協助企業傳遞心意、深化品牌連結，也讓值得被看見的好品牌，走進更多人的生活。</p>
 <a href="#services" class="btn-o" style="text-decoration: none; background: transparent; color: #4B4948; border: 1px solid #4B4948; padding: 13px 38px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; letter-spacing: 0.14em; font-size: 15px;">找到適合的服務</a>
 <p style="margin: 6px 0 0; font-family: 'EB Garamond', serif; font-size: 14px; letter-spacing: 0.28em; text-transform: uppercase; color: #6F6D6B;">Corporate Gifting &amp; Brand Partnerships</p>
 </div>
@@ -115,7 +223,7 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 <li>提供客製化服務</li>
 </ul>
 <div style="margin-top: auto; display: flex; flex-direction: column; gap: 8px;">
-<a href="https://catalogue.crystalandco.co" style="font-size: 14px; text-align: center; min-height: 40px; display: inline-flex; align-items: center; justify-content: center; letter-spacing: 0.06em;">先瀏覽晶選良品 →</a>
+<a target="_blank" rel="noopener" href="https://catalogue.crystalandco.co" style="font-size: 14px; text-align: center; min-height: 40px; display: inline-flex; align-items: center; justify-content: center; letter-spacing: 0.06em;">先瀏覽晶選良品 →</a>
 <a href="#contact" class="btn-o" style="text-decoration: none; color: #4B4948; border: 1px solid #4B4948; padding: 12px 22px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; letter-spacing: 0.12em;">諮詢企業禮品</a>
 </div>
 </article>
@@ -197,19 +305,75 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 <h2 style="margin: 0; font-family: 'Noto Serif TC', serif; font-weight: 400; font-size: clamp(28px, 3.2vw, 38px); line-height: 1.5; letter-spacing: 0.08em;">跨越產業的信任</h2>
 <p style="margin: 0; color: #4B4948;">從奢侈精品到醫療產業，我們持續提供企業最佳的禮品與設計製作解決方案。</p>
 </div>
-<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px;">
-<li style="border: 1px solid #D9CFBF; padding: 8px 20px; font-size: 15px; letter-spacing: 0.06em;">奢侈精品</li>
-<li style="border: 1px solid #D9CFBF; padding: 8px 20px; font-size: 15px; letter-spacing: 0.06em;">醫療製藥</li>
-<li style="border: 1px solid #D9CFBF; padding: 8px 20px; font-size: 15px; letter-spacing: 0.06em;">金融保險與顧問</li>
-<li style="border: 1px solid #D9CFBF; padding: 8px 20px; font-size: 15px; letter-spacing: 0.06em;">時尚品牌</li>
-<li style="border: 1px solid #D9CFBF; padding: 8px 20px; font-size: 15px; letter-spacing: 0.06em;">飲料酒類</li>
-<li style="border: 1px solid #D9CFBF; padding: 8px 20px; font-size: 15px; letter-spacing: 0.06em;">餐飲服務</li>
-<li style="border: 1px solid #D9CFBF; padding: 8px 20px; font-size: 15px; letter-spacing: 0.06em;">食品消費</li>
-<li style="border: 1px solid #D9CFBF; padding: 8px 20px; font-size: 15px; letter-spacing: 0.06em;">教育機構</li>
-<li style="border: 1px solid #D9CFBF; padding: 8px 20px; font-size: 15px; letter-spacing: 0.06em;">工業與能源</li>
-<li style="border: 1px solid #D9CFBF; padding: 8px 20px; font-size: 15px; letter-spacing: 0.06em;">房地產</li>
-<li style="border: 1px solid #D9CFBF; padding: 8px 20px; font-size: 15px; letter-spacing: 0.06em;">公家機關</li>
-</ul>
+<p class="ind-line" style="margin: 0; max-width: 980px; font-family: 'Noto Serif TC', serif; font-size: 17px; line-height: 2.3; letter-spacing: 0.16em; color: #4B4948;">奢侈精品<span class="ind-dot">·</span>醫療製藥<span class="ind-dot">·</span>金融保險與顧問<span class="ind-dot">·</span>時尚品牌<span class="ind-dot">·</span>飲料酒類<span class="ind-dot">·</span>餐飲服務<br class="br-d"><span class="ind-dot dot-m">·</span>食品消費<span class="ind-dot">·</span>教育機構<span class="ind-dot">·</span>工業與能源<span class="ind-dot">·</span>房地產<span class="ind-dot">·</span>公家機關</p>
+<div class="mq" role="region" aria-label="合作客戶" style="margin-top: 24px; padding: 28px 0; border-top: 1px solid #E4DCCF; border-bottom: 1px solid #E4DCCF; overflow: hidden;">
+<div class="mq-track" style="display: flex; align-items: center; width: max-content;">
+<img class="mq-logo" src="assets/clients/rolls-royce.png" alt="Rolls-Royce" height="40" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/bell-ross.png" alt="Bell &amp; Ross" height="23" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/johnnie-walker.png" alt="Johnnie Walker" height="35" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/johnson-johnson.png" alt="Johnson &amp; Johnson" height="16" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/deloitte.png" alt="Deloitte" height="19" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/hearts-on-fire.png" alt="HEARTS ON FIRE" height="16" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/curators-of-travel.png" alt="Curators of Travel" height="24" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/roche.png" alt="Roche" height="32" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/auchentoshan.png" alt="Auchentoshan" height="23" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/ash.png" alt="ASH" height="40" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/nan-shan.png" alt="南山人壽 NAN SHAN" height="36" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/kuno.png" alt="K.UNO JAPAN" height="29" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/boston-scientific.png" alt="Boston Scientific" height="26" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/niseko.png" alt="Niseko" height="22" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/swatch.png" alt="Swatch" height="18" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/sinopac.png" alt="永豐金控 SinoPac Holdings" height="23" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/straumann.png" alt="Straumann" height="21" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/meimen.png" alt="梅門 MEIMEN" height="40" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/danny-wine.png" alt="丹尼酒窖 Danny Wine Collection" height="37" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/jins.png" alt="JINS" height="25" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/amgen.png" alt="Amgen" height="22" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/ul-solutions.png" alt="UL Solutions" height="28" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/mr-brown.png" alt="伯朗咖啡 Mr. Brown Café" height="26" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/botox.png" alt="BOTOX" height="21" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/jim-beam.png" alt="Jim Beam" height="39" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/standard-foods.png" alt="佳格 Standard Foods" height="40" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/maicoin.png" alt="MaiCoin" height="19" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/hexa.png" alt="和暄綠能 HEXA Renewables" height="28" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/true-blossom.png" alt="誠佳祥建設 True Blossom Development" height="39" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/coinw.png" alt="CoinW" height="22" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/gymboree.png" alt="Gymboree Play &amp; Music" height="38" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/mangogo.png" alt="芒狗狗" height="23" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/rolls-royce.png" alt="" aria-hidden="true" height="40" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/bell-ross.png" alt="" aria-hidden="true" height="23" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/johnnie-walker.png" alt="" aria-hidden="true" height="35" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/johnson-johnson.png" alt="" aria-hidden="true" height="16" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/deloitte.png" alt="" aria-hidden="true" height="19" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/hearts-on-fire.png" alt="" aria-hidden="true" height="16" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/curators-of-travel.png" alt="" aria-hidden="true" height="24" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/roche.png" alt="" aria-hidden="true" height="32" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/auchentoshan.png" alt="" aria-hidden="true" height="23" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/ash.png" alt="" aria-hidden="true" height="40" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/nan-shan.png" alt="" aria-hidden="true" height="36" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/kuno.png" alt="" aria-hidden="true" height="29" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/boston-scientific.png" alt="" aria-hidden="true" height="26" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/niseko.png" alt="" aria-hidden="true" height="22" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/swatch.png" alt="" aria-hidden="true" height="18" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/sinopac.png" alt="" aria-hidden="true" height="23" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/straumann.png" alt="" aria-hidden="true" height="21" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/meimen.png" alt="" aria-hidden="true" height="40" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/danny-wine.png" alt="" aria-hidden="true" height="37" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/jins.png" alt="" aria-hidden="true" height="25" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/amgen.png" alt="" aria-hidden="true" height="22" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/ul-solutions.png" alt="" aria-hidden="true" height="28" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/mr-brown.png" alt="" aria-hidden="true" height="26" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/botox.png" alt="" aria-hidden="true" height="21" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/jim-beam.png" alt="" aria-hidden="true" height="39" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/standard-foods.png" alt="" aria-hidden="true" height="40" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/maicoin.png" alt="" aria-hidden="true" height="19" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/hexa.png" alt="" aria-hidden="true" height="28" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/true-blossom.png" alt="" aria-hidden="true" height="39" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/coinw.png" alt="" aria-hidden="true" height="22" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/gymboree.png" alt="" aria-hidden="true" height="38" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<img class="mq-logo" src="assets/clients/mangogo.png" alt="" aria-hidden="true" height="23" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+</div>
+</div>
 </section>
 
 <!-- CASES -->
@@ -220,7 +384,7 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 <p style="margin: 0; font-family: 'EB Garamond', serif; font-size: 14px; letter-spacing: 0.28em; color: #7D5F3C;">OUR WORKS</p>
 <h2 style="margin: 0; font-family: 'Noto Serif TC', serif; font-weight: 400; font-size: clamp(28px, 3.2vw, 38px); line-height: 1.5; letter-spacing: 0.08em;">專屬策劃案例</h2>
 </div>
-<a href="https://www.instagram.com/crystalandcollective/" class="btn-o" style="text-decoration: none; color: #4B4948; border: 1px solid #4B4948; padding: 11px 26px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px; letter-spacing: 0.1em; font-size: 15px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>看更多企業禮品作品 →</a>
+<a target="_blank" rel="noopener" href="https://www.instagram.com/crystalandcollective/" class="btn-o" style="text-decoration: none; color: #4B4948; border: 1px solid #4B4948; padding: 11px 26px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px; letter-spacing: 0.1em; font-size: 15px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>看更多企業禮品作品 →</a>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; align-items: stretch;">
 
@@ -373,6 +537,10 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 
 <figure style="margin: 0; display: flex; flex-direction: column; gap: 16px;"><div style="position: relative; flex-grow: 1; display: flex;"><blockquote style="margin: 0; flex-grow: 1; background: #F3EEE6; color: #4B4948; border-radius: 16px; padding: 22px 24px; font-size: 16px; line-height: 1.85;">採購：這次的組合很棒，大貨都OK。需求單位有反饋發送很方便，禮物也大方。</blockquote><span aria-hidden="true" style="position: absolute; left: 30px; bottom: -7px; width: 14px; height: 14px; background: #F3EEE6; transform: rotate(45deg);"></span></div><figcaption style="padding-left: 24px; font-size: 12px; letter-spacing: 0.08em; color: #D9C29C;">Financial｜企業禮品</figcaption></figure>
 
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 16px;"><div style="position: relative; flex-grow: 1; display: flex;"><blockquote style="margin: 0; flex-grow: 1; background: #F3EEE6; color: #4B4948; border-radius: 16px; padding: 22px 24px; font-size: 16px; line-height: 1.85;">V客戶：很喜歡 質感不錯！<br>現在多地被拿來掛公司機器(機器都用登機箱裝)</blockquote><span aria-hidden="true" style="position: absolute; left: 30px; bottom: -7px; width: 14px; height: 14px; background: #F3EEE6; transform: rotate(45deg);"></span></div><figcaption style="padding-left: 24px; font-size: 12px; letter-spacing: 0.08em; color: #D9C29C;">Medical｜企業周邊</figcaption></figure>
+
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 16px;"><div style="position: relative; flex-grow: 1; display: flex;"><blockquote style="margin: 0; flex-grow: 1; background: #F3EEE6; color: #4B4948; border-radius: 16px; padding: 22px 24px; font-size: 16px; line-height: 1.85;">K客戶：美國marketing很喜歡我們2022做的這款隨身攜帶的demo tool! 🩶</blockquote><span aria-hidden="true" style="position: absolute; left: 30px; bottom: -7px; width: 14px; height: 14px; background: #F3EEE6; transform: rotate(45deg);"></span></div><figcaption style="padding-left: 24px; font-size: 12px; letter-spacing: 0.08em; color: #D9C29C;">Medical｜企業周邊・2025</figcaption></figure>
+
 </div>
 </div>
 </section>
@@ -387,22 +555,28 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 </div>
 <a href="#brands" class="btn-o" style="text-decoration: none; color: #4B4948; border: 1px solid #4B4948; padding: 11px 28px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; letter-spacing: 0.1em; font-size: 15px;">認識所有合作品牌 →</a>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; align-items: stretch;">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 28px; align-items: stretch;">
 
-<article style="background: #FDFBF7; border: 1px solid #E4DCCF; padding: 48px 44px; display: flex; flex-direction: column; gap: 24px;">
-<div style="height: 120px; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #E4DCCF; padding-bottom: 28px;"><img loading="lazy" src="assets/brand-fengshen.png" alt="蜂神 Logo" style="height: 100px; width: auto; max-width: 100%; object-fit: contain; display: block;"></div>
-<h3 style="margin: 0; font-family: 'Noto Serif TC', serif; font-weight: 400; font-size: 24px; letter-spacing: 0.08em;">蜂神</h3>
-<p style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 18px; line-height: 1.8; color: #7D5F3C;">有時，一份純粹的初心，能帶領我們回到最本真的地方。</p>
-<p style="margin: 0; color: #4B4948;">創辦人王大哥的故事，正是從一份對母親的愛開始。為了母親的健康，王大哥返鄉南投魚池，他選擇蓮華池研究中心這片純淨森林，以「林下養蜂」方式，讓蜜蜂穿梭山林，吸取天地精華，打造出【蜂神天然熟成森林蜜】。</p>
-<a href="https://www.foresthoney.tw/" style="margin-top: auto; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; letter-spacing: 0.06em;">前往品牌官網 →</a>
+<article style="background: #FDFBF7; border: 1px solid #E4DCCF; padding: 40px 36px; display: flex; flex-direction: column; gap: 20px;">
+<div style="height: 96px; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #E4DCCF; padding-bottom: 24px;"><img loading="lazy" src="assets/brand-fengshen.png" alt="蜂神森林養蜂場 Logo" style="width: 230px; height: auto; max-width: 100%; object-fit: contain; display: block; mix-blend-mode: multiply;"></div>
+<h3 style="margin: 0; font-family: 'Noto Serif TC', serif; font-weight: 400; font-size: 22px; letter-spacing: 0.08em;">蜂神森林養蜂場</h3>
+<p style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 17px; line-height: 1.8; color: #7D5F3C;">有時，一份純粹的初心，能帶領我們回到最本真的地方。</p>
+<p style="margin: 0; font-size: 15px; color: #4B4948;">創辦人王大哥的故事，正是從一份對母親的愛開始。為了母親的健康，王大哥返鄉南投魚池，他選擇蓮華池研究中心這片純淨森林，以「林下養蜂」方式，讓蜜蜂穿梭山林，吸取天地精華，打造出【蜂神天然熟成森林蜜】。</p>
+<a target="_blank" rel="noopener" href="https://www.foresthoney.tw/" style="margin-top: auto; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; letter-spacing: 0.06em;">前往品牌官網 →</a>
 </article>
 
-<article style="background: #FDFBF7; border: 1px solid #E4DCCF; padding: 48px 44px; display: flex; flex-direction: column; gap: 24px;">
-<div style="height: 120px; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #E4DCCF; padding-bottom: 28px;"><img loading="lazy" src="assets/brand-ystudio.png" alt="物外YSTUDIO Logo" style="width: 260px; height: auto; max-width: 100%; object-fit: contain; display: block; mix-blend-mode: multiply;"></div>
-<h3 style="margin: 0; font-family: 'Noto Serif TC', serif; font-weight: 400; font-size: 24px; letter-spacing: 0.08em;">物外YSTUDIO</h3>
-<p style="margin: 0; font-family: 'EB Garamond', 'Noto Serif TC', serif; font-size: 21px; line-height: 1.7; letter-spacing: 0.03em; color: #7D5F3C;">The Weight of Words</p>
-<p style="margin: 0; color: #4B4948;">物外YSTUDIO專注於製作良善的器物，致力分享文字的力量與書寫的文化，打造屬於台灣人的精品文具產品，希望藉由書寫建立溫暖的聯繫和情感，如今成長為國際知名的品牌。</p>
-<a href="https://www.ystudiostyle.com.tw" style="margin-top: auto; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; letter-spacing: 0.06em;">前往品牌官網 →</a>
+<article style="background: #FDFBF7; border: 1px solid #E4DCCF; padding: 40px 36px; display: flex; flex-direction: column; gap: 20px;">
+<div style="height: 96px; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #E4DCCF; padding-bottom: 24px;"><img loading="lazy" src="assets/brand-ystudio.png" alt="物外YSTUDIO Logo" style="width: 200px; height: auto; max-width: 100%; object-fit: contain; display: block; mix-blend-mode: multiply;"></div>
+<h3 style="margin: 0; font-family: 'Noto Serif TC', serif; font-weight: 400; font-size: 22px; letter-spacing: 0.08em;">物外YSTUDIO</h3>
+<p style="margin: 0; font-family: 'EB Garamond', 'Noto Serif TC', serif; font-size: 20px; line-height: 1.7; letter-spacing: 0.03em; color: #7D5F3C;">The Weight of Words</p>
+<p style="margin: 0; font-size: 15px; color: #4B4948;">物外YSTUDIO專注於製作良善的器物，致力分享文字的力量與書寫的文化，打造屬於台灣人的精品文具產品。希望藉由書寫建立溫暖的聯繫和情感，如今在諸多城市與國家都可以見到物外YSTUDIO。</p>
+<a target="_blank" rel="noopener" href="https://www.ystudiostyle.com.tw" style="margin-top: auto; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; letter-spacing: 0.06em;">前往品牌官網 →</a>
+</article>
+
+<article aria-label="即將登場的合作品牌" style="background: rgba(253,251,247,0.4); border: 1px dashed #D9CFBF; padding: 40px 36px; min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center;">
+<img src="assets/icon-star.png" alt="" style="width: 14px; height: 14px; opacity: 0.35;">
+<p style="margin: 0; font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.3em; color: #B89B72;">COMING SOON</p>
+<p style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 16px; letter-spacing: 0.08em; color: #6F6D6B;">下一個好品牌，正在路上。</p>
 </article>
 
 </div>
@@ -438,18 +612,21 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 <p style="margin: 0; font-family: 'EB Garamond', serif; font-style: italic; font-size: 26px; color: #7D5F3C;">the meaningful one.</p>
 <h2 style="margin: 0; font-family: 'Noto Serif TC', serif; font-weight: 400; font-size: clamp(28px, 3.2vw, 38px); line-height: 1.5; letter-spacing: 0.08em;">預約30分鐘<br>企業禮品需求診斷</h2>
 <p style="margin: 0; color: #4B4948;">不收費，只需告訴我們您的品牌目標、預算與方向，<br class="br-d">我們將於1-2個工作天回覆您。</p>
-<a href="https://calendar.app.google/cCXVzgeoHbBhTNv5A" class="btn-f" style="align-self: flex-start; text-decoration: none; background: #4B4948; color: #F8F5EF; padding: 13px 40px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; letter-spacing: 0.14em;">立即預約</a>
+<a target="_blank" rel="noopener" href="https://calendar.app.google/cCXVzgeoHbBhTNv5A" class="btn-f" style="align-self: flex-start; text-decoration: none; background: #4B4948; color: #F8F5EF; padding: 13px 40px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; letter-spacing: 0.14em;">立即預約</a>
 </div>
 <div class="nc-card" style="flex: 1 1 380px; min-width: 0; background: rgba(253,251,247,0.9); border: 1px solid #E4DCCF; padding: 44px 40px; display: flex; flex-direction: column; align-items: center; gap: 28px; box-sizing: border-box;">
-<img src="assets/icon-star.png" alt="" style="width: 16px; height: 16px;">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+<video class="jy" src="assets/jingya.mp4" poster="assets/jingya.png" autoplay muted loop playsinline aria-label="晶品的小寵物晶芽" style="width: 104px; height: auto; display: block;"></video>
+<p style="margin: 0; font-size: 12px; letter-spacing: 0.12em; color: #6F6D6B;">你好，我是晶芽</p>
+</div>
 <ul style="width: 100%; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 22px;">
 <li style="display: flex; flex-direction: column; gap: 2px;">
 <div class="nc-row" style="display: flex; align-items: baseline; gap: 12px;"><span style="flex: none; font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.24em; color: #7D5F3C;">EMAIL</span><span aria-hidden="true" class="nc-dots" style="flex: 1 1 auto; border-bottom: 1px dotted #C9B48F; transform: translateY(-5px);"></span><a href="mailto:connect@crystalandco.co" class="nc-link" style="flex: none; font-size: 14px; letter-spacing: 0.08em; color: #7D5F3C;">寄信給我們</a></div>
 <span class="nc-mail" style="align-self: flex-end; font-size: 13px; color: #6F6D6B;">connect@crystalandco.co</span>
 </li>
-<li class="nc-row" style="display: flex; align-items: baseline; gap: 12px;"><span style="flex: none; font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.24em; color: #7D5F3C;">OFFICIAL LINE</span><span aria-hidden="true" class="nc-dots" style="flex: 1 1 auto; border-bottom: 1px dotted #C9B48F; transform: translateY(-5px);"></span><a href="https://line.me/R/ti/p/%40968veimr" class="nc-link" style="flex: none; font-size: 14px; letter-spacing: 0.08em; color: #7D5F3C;">加入LINE官方帳號</a></li>
-<li class="nc-row" style="display: flex; align-items: baseline; gap: 12px;"><span style="flex: none; font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.24em; color: #7D5F3C;">INSTAGRAM</span><span aria-hidden="true" class="nc-dots" style="flex: 1 1 auto; border-bottom: 1px dotted #C9B48F; transform: translateY(-5px);"></span><a href="https://www.instagram.com/crystalandcollective/" class="nc-link" style="flex: none; font-size: 14px; letter-spacing: 0.08em; color: #7D5F3C;">看最新消息＆作品</a></li>
-<li class="nc-row" style="display: flex; align-items: baseline; gap: 12px;"><span style="flex: none; font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.24em; color: #7D5F3C;">CATALOGUE</span><span aria-hidden="true" class="nc-dots" style="flex: 1 1 auto; border-bottom: 1px dotted #C9B48F; transform: translateY(-5px);"></span><a href="https://catalogue.crystalandco.co" class="nc-link" style="flex: none; font-size: 14px; letter-spacing: 0.08em; color: #7D5F3C;">瀏覽晶選良品</a></li>
+<li class="nc-row" style="display: flex; align-items: baseline; gap: 12px;"><span style="flex: none; font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.24em; color: #7D5F3C;">OFFICIAL LINE</span><span aria-hidden="true" class="nc-dots" style="flex: 1 1 auto; border-bottom: 1px dotted #C9B48F; transform: translateY(-5px);"></span><a target="_blank" rel="noopener" href="https://line.me/R/ti/p/%40968veimr" class="nc-link" style="flex: none; font-size: 14px; letter-spacing: 0.08em; color: #7D5F3C;">加入LINE官方帳號</a></li>
+<li class="nc-row" style="display: flex; align-items: baseline; gap: 12px;"><span style="flex: none; font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.24em; color: #7D5F3C;">INSTAGRAM</span><span aria-hidden="true" class="nc-dots" style="flex: 1 1 auto; border-bottom: 1px dotted #C9B48F; transform: translateY(-5px);"></span><a target="_blank" rel="noopener" href="https://www.instagram.com/crystalandcollective/" class="nc-link" style="flex: none; font-size: 14px; letter-spacing: 0.08em; color: #7D5F3C;">看最新消息＆作品</a></li>
+<li class="nc-row" style="display: flex; align-items: baseline; gap: 12px;"><span style="flex: none; font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.24em; color: #7D5F3C;">CATALOGUE</span><span aria-hidden="true" class="nc-dots" style="flex: 1 1 auto; border-bottom: 1px dotted #C9B48F; transform: translateY(-5px);"></span><a target="_blank" rel="noopener" href="https://catalogue.crystalandco.co" class="nc-link" style="flex: none; font-size: 14px; letter-spacing: 0.08em; color: #7D5F3C;">瀏覽晶選良品</a></li>
 </ul>
 </div>
 </div>
@@ -457,15 +634,15 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 
 <!-- FOOTER -->
 <footer style="border-top: 1px solid #E4DCCF;">
-<div style="max-width: 1240px; margin: 0 auto; padding: 64px 32px 48px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
-<div style="display: flex; flex-direction: column; gap: 10px; max-width: 420px;">
-<img src="assets/logo.png" alt="C&amp;Co. 晶品" style="height: 26px; width: auto; align-self: flex-start; margin-bottom: 8px;">
+<div style="max-width: 1240px; margin: 0 auto; padding: 72px 32px 56px; display: flex; flex-wrap: wrap; align-items: flex-end; gap: 48px;">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px;">
+<img src="assets/logo.png" alt="C&amp;Co. 晶品" style="height: 26px; width: auto; align-self: flex-start; margin-bottom: 10px;">
 <p style="margin: 0; font-size: 14px; color: #4B4948; letter-spacing: 0.06em;">讓好品牌被看見，讓送禮更有意義。</p>
 <p style="margin: 0; font-family: 'EB Garamond', serif; font-size: 15px; color: #4B4948;">Corporate Gifting &amp; Brand Partnerships</p>
 <p style="margin: 0; font-size: 14px; color: #4B4948;">企業禮品｜貴賓禮｜品牌限定合作</p>
 <p style="margin: 0; font-family: 'EB Garamond', serif; font-size: 14px; letter-spacing: 0.16em; color: #6F6D6B;">Originals · Custom · Taiwan Value</p>
 </div>
-<nav aria-label="頁尾導覽" style="margin-top: 42px; display: flex; flex-wrap: wrap; gap: 72px; font-size: 14px;">
+<nav aria-label="頁尾導覽" style="flex: 1 1 420px; min-width: 0; display: flex; flex-wrap: wrap; gap: 40px 112px; font-size: 14px;">
 <div style="display: flex; flex-direction: column; gap: 10px;">
 <p style="margin: 0; font-size: 15px; letter-spacing: 0.2em; color: #7D5F3C;">晶品服務</p>
 <div style="width: 24px; height: 1px; background: #B89B72; margin-bottom: 6px;"></div>
@@ -479,7 +656,7 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 <div style="width: 24px; height: 1px; background: #B89B72; margin-bottom: 6px;"></div>
 <a href="#brands" class="ft-link" style="color: #4B4948;">合作品牌</a>
 <a href="#voices" class="ft-link" style="color: #4B4948;">客戶怎麼說</a>
-<a href="https://catalogue.crystalandco.co" class="ft-link" style="color: #4B4948;">晶選良品 ↗</a>
+<a target="_blank" rel="noopener" href="https://catalogue.crystalandco.co" class="ft-link" style="color: #4B4948;">晶選良品 ↗</a>
 <a href="#about" class="ft-link" style="color: #4B4948;">關於晶品</a>
 </div>
 </nav>
