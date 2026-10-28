@@ -121,7 +121,36 @@
 <style>
 body{margin:0;background:#F8F5EF}
 a{color:#4B4948}a:hover{color:#7D5F3C}
-.kv-hero{background:#F8F5EF url(assets/kv-hero.jpg) center center/cover no-repeat}
+.kv-hero{background-color:#F1E7D6;background-image:radial-gradient(ellipse 56% 60% at 50% 50%,rgba(250,247,241,.95) 0%,rgba(250,247,241,.84) 40%,rgba(250,247,241,.38) 74%,rgba(250,247,241,.06) 100%),url(assets/kv-hero.jpg);background-position:center,center;background-size:cover,cover;background-repeat:no-repeat}
+.glow-star{position:absolute;top:15%;right:16%;width:120px;height:120px;margin:-60px -60px 0 0;pointer-events:none;background:radial-gradient(circle,rgba(255,255,255,.95) 0 3%,rgba(255,248,225,.6) 8%,rgba(255,240,200,.15) 30%,transparent 60%);animation:twinkle 4.2s ease-in-out infinite}
+.glow-star::before,.glow-star::after{content:'';position:absolute;left:50%;top:0;width:2px;height:100%;margin-left:-1px;background:linear-gradient(transparent,rgba(255,255,255,.95),transparent)}
+.glow-star::after{transform:rotate(90deg)}
+@keyframes twinkle{0%,100%{opacity:.25;transform:scale(.6) rotate(0deg)}50%{opacity:1;transform:scale(1) rotate(20deg)}}
+.glow-orb{position:absolute;left:7%;bottom:12%;width:220px;height:220px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,236,190,.8),rgba(255,224,160,.28) 45%,transparent 70%);animation:breathe 6.5s ease-in-out 1.5s infinite}
+@keyframes breathe{0%,100%{opacity:.35;transform:scale(.9)}50%{opacity:.95;transform:scale(1.08)}}
+.sl .ch{display:inline-block;opacity:0;transform:translateY(14px);animation:chIn .9s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes chIn{to{opacity:1;transform:none}}
+.sl-sheen{position:absolute;left:0;right:0;top:0;padding-left:.18em;color:transparent;background:linear-gradient(105deg,transparent 43%,#EAD3A2 50%,transparent 57%);background-size:300% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;animation:sheen 1.8s ease-in-out 1.9s 1 both;pointer-events:none}
+.sl-sheen span{display:inline-block}
+@keyframes sheen{from{background-position:100% 0}to{background-position:0 0}}
+.site-head{transition:box-shadow .3s ease}
+.site-head.scrolled{box-shadow:0 6px 24px rgba(75,73,72,.07)}
+.mq-item{position:relative;display:block;flex:none;margin:0 34px}
+.mq-logo{transition:opacity .35s ease}
+.mq-c{position:absolute;left:0;top:0;width:auto;display:block;opacity:0;transition:opacity .35s ease}
+@media (hover:hover){.mq-item:hover .mq-c{opacity:1}.mq-item:hover .mq-logo{opacity:0 !important}}
+.kv-about{position:relative;overflow:hidden}
+.kv-about > *{position:relative;z-index:1}
+.kv-about::after{content:'';position:absolute;top:-20%;bottom:-20%;left:0;width:22%;z-index:0;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:translateX(-150%) skewX(-18deg);animation:mirror 9s ease-in-out 1s infinite}
+@keyframes mirror{0%{transform:translateX(-150%) skewX(-18deg)}35%,100%{transform:translateX(560%) skewX(-18deg)}}
+.nc-dots{position:relative}
+.nc-dots::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;background:#B89B72;transform:scaleX(0);transform-origin:left;transition:transform .5s ease}
+.nc-row:hover .nc-dots::after{transform:scaleX(1)}
+.nc-link::after{content:'→';display:inline-block;margin-left:.4em;opacity:0;transform:translateX(-6px);transition:opacity .3s ease,transform .3s ease}
+.nc-row:hover .nc-link::after{opacity:1;transform:none}
+.nc-lab{transition:color .3s ease}
+.nc-row:hover .nc-lab{color:#B89B72 !important}
+.nav-toggle{display:none}
 .kv-about{background-color:#F8F5EF;background-image:linear-gradient(90deg,rgba(253,251,247,0.94) 0%,rgba(253,251,247,0.82) 42%,rgba(253,251,247,0.1) 72%),url(assets/kv-about.jpg);background-position:center,right center;background-size:cover,cover;background-repeat:no-repeat}
 .kv-lines{background-color:#FDFBF7;background-image:linear-gradient(90deg,rgba(253,251,247,0.55),rgba(253,251,247,0.25)),url(assets/kv-contact.jpg);background-position:center,center;background-size:cover,cover;background-repeat:no-repeat}
 .btn-o{transition:background-color .25s ease,color .25s ease}
@@ -140,7 +169,7 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 .mq-track{animation:mq 90s linear infinite}
 .mq:hover .mq-track{animation-play-state:paused}
 .jy{-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 60%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 60%,transparent 100%)}
-@media (prefers-reduced-motion:reduce){.mq-track{animation:none}}
+@media (prefers-reduced-motion:reduce){.mq-track,.glow-star,.glow-orb,.kv-about::after{animation:none}.sl .ch{animation:none;opacity:1;transform:none}.sl-sheen{display:none}}
 @media (max-width:640px){
 .ct-box{padding:48px 20px !important;gap:40px !important}
 .nc-card{padding:32px 22px !important}
@@ -150,23 +179,48 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 .cp-sep{display:none}
 .ind-line{font-size:15px !important;letter-spacing:0.1em !important}
 .ind-dot{margin:0 0.5em}
-.mq-logo{margin:0 22px !important;transform:scale(0.85)}
+.mq-item{margin:0 22px;transform:scale(0.85)}
 .br-d{display:none}
 .dot-m{display:inline}
 .nav-cta{font-size:13px !important;padding:8px 18px !important;min-height:40px !important;letter-spacing:0.08em !important}
 .cp-part{display:block}
+.kv-hero{background-image:radial-gradient(ellipse 95% 62% at 50% 50%,rgba(250,247,241,.95) 0%,rgba(250,247,241,.82) 45%,rgba(250,247,241,.35) 80%,rgba(250,247,241,.1) 100%),url(assets/kv-hero.jpg)}
+.glow-star{top:10%;right:8%;width:80px;height:80px;margin:-40px -40px 0 0}
+.glow-orb{width:150px;height:150px}
+}
+@media (max-width:760px){
+.nav-toggle{display:inline-flex !important}
+.nav-links{display:none !important;width:100%;flex-direction:column;align-items:flex-start !important;gap:2px !important;padding:6px 0 4px}
+.nav-links.open{display:flex !important}
+.nav-links a{min-height:44px;display:flex;align-items:center}
+.nav-links .nav-cta{margin-top:10px}
 }
 </style>
-<style>html{scroll-behavior:smooth}img{max-width:100%}</style>
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:84px}img{max-width:100%}
+.js-rv .rv{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.js-rv .rv.in{opacity:1;transform:none}
+.cnt{font-variant-numeric:tabular-nums}
+.gal .gal-media{cursor:zoom-in}
+.lb{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;background:rgba(40,38,36,.92);padding:56px 16px}
+.lb.open{display:flex}
+.lb-media{max-width:min(92vw,1100px);max-height:82vh;width:auto;height:auto;display:block;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.lb button{position:absolute;width:48px;height:48px;border-radius:50%;border:1px solid rgba(248,245,239,.4);background:rgba(248,245,239,.08);color:#F8F5EF;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.lb button:hover{background:rgba(248,245,239,.2)}
+.lb-close{top:16px;right:16px}.lb-prev{left:16px;top:50%;transform:translateY(-50%)}.lb-next{right:16px;top:50%;transform:translateY(-50%)}
+.lb-count{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#E9E2D6;font-family:'EB Garamond',serif;letter-spacing:.14em;font-size:15px}
+@media (prefers-reduced-motion:reduce){.js-rv .rv{opacity:1;transform:none;transition:none}}
+</style>
 </head>
 <body>
 <div style="background: #F8F5EF; color: #4B4948; font-family: 'Noto Sans TC', system-ui, sans-serif; font-size: 16px; line-height: 1.9; font-weight: 400;">
 
 <!-- NAV -->
-<header style="border-bottom: 1px solid #E4DCCF; background: #F8F5EF;">
+<header class="site-head" style="position: sticky; top: 0; z-index: 50; border-bottom: 1px solid #E4DCCF; background: rgba(248,245,239,0.9); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);">
 <nav aria-label="主選單" style="max-width: 1240px; margin: 0 auto; padding: 22px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px;">
 <a href="#top" aria-label="C&amp;Co. 晶品 首頁" style="display: flex; align-items: center;"><img src="assets/logo.png" alt="C&amp;Co." style="height: 28px; width: auto; display: block;"></a>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 32px; font-size: 15px; letter-spacing: 0.08em;">
+<button type="button" class="nav-toggle" aria-label="開啟選單" aria-expanded="false" aria-controls="nav-links" style="align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 1px solid #D9CFBF; border-radius: 50%; background: transparent; color: #4B4948; cursor: pointer;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<div class="nav-links" id="nav-links" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 32px; font-size: 15px; letter-spacing: 0.08em;">
 <a href="#services" style="text-decoration: none;">晶品服務</a>
 <a href="#cases" style="text-decoration: none;">專屬策劃</a>
 <a href="#brands" style="text-decoration: none;">合作品牌</a>
@@ -178,10 +232,12 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 </header>
 
 <!-- HERO -->
-<section id="top" class="kv-hero" style="min-height: 720px; display: flex; align-items: center; justify-content: center; padding: 120px 32px; box-sizing: border-box;">
-<div style="max-width: 820px; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center;">
-<p style="margin: 0; font-family: 'EB Garamond', serif; font-style: italic; font-size: 30px; line-height: 1.2; color: #7D5F3C;">the meaningful one.</p>
-<h1 style="margin: 0; padding-left: 0.18em; font-family: 'Noto Serif TC', serif; font-weight: 400; font-size: clamp(28px, 3.6vw, 44px); line-height: 1.7; letter-spacing: 0.18em;">讓好品牌被看見<br>讓送禮更有意義</h1>
+<section id="top" class="kv-hero" style="position: relative; overflow: hidden; min-height: 720px; display: flex; align-items: center; justify-content: center; padding: 120px 32px; box-sizing: border-box;">
+<span class="glow-orb" aria-hidden="true"></span>
+<span class="glow-star" aria-hidden="true"></span>
+<div style="position: relative; z-index: 1; max-width: 820px; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center;">
+<img src="assets/the-meaningful-one.png" alt="the meaningful one." style="width: 200px; height: auto; display: block; margin-bottom: 8px;">
+<h1 class="sl" aria-label="讓好品牌被看見 讓送禮更有意義" style="position: relative; margin: 0; padding-left: 0.18em; font-family: 'Noto Serif TC', serif; font-weight: 400; font-size: clamp(28px, 3.6vw, 44px); line-height: 1.7; letter-spacing: 0.18em;"><span class="ch" style="animation-delay: 0.10s">讓</span><span class="ch" style="animation-delay: 0.18s">好</span><span class="ch" style="animation-delay: 0.26s">品</span><span class="ch" style="animation-delay: 0.34s">牌</span><span class="ch" style="animation-delay: 0.42s">被</span><span class="ch" style="animation-delay: 0.50s">看</span><span class="ch" style="animation-delay: 0.58s">見</span><br><span class="ch" style="animation-delay: 0.70s">讓</span><span class="ch" style="animation-delay: 0.78s">送</span><span class="ch" style="animation-delay: 0.86s">禮</span><span class="ch" style="animation-delay: 0.94s">更</span><span class="ch" style="animation-delay: 1.02s">有</span><span class="ch" style="animation-delay: 1.10s">意</span><span class="ch" style="animation-delay: 1.18s">義</span><span class="sl-sheen" aria-hidden="true"><span>讓</span><span>好</span><span>品</span><span>牌</span><span>被</span><span>看</span><span>見</span><br><span>讓</span><span>送</span><span>禮</span><span>更</span><span>有</span><span>意</span><span>義</span></span></h1>
 <div style="width: 48px; height: 1px; background: #B89B72;"></div>
 <p style="margin: 0; font-size: 16px; line-height: 2; color: #4B4948;">我們相信，禮品是品牌價值的載體。C&amp;Co. 晶品透過策略選品與品牌合作，<br class="br-d">協助企業傳遞心意、深化品牌連結，也讓值得被看見的好品牌，走進更多人的生活。</p>
 <a href="#services" class="btn-o" style="text-decoration: none; background: transparent; color: #4B4948; border: 1px solid #4B4948; padding: 13px 38px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; letter-spacing: 0.14em; font-size: 15px;">找到適合的服務</a>
@@ -192,10 +248,10 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 <!-- STATS -->
 <section aria-label="晶品實績" style="max-width: 1240px; margin: 0 auto; padding: 72px 32px 104px;">
 <dl style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); border-top: 1px solid #D9CFBF; border-bottom: 1px solid #D9CFBF;">
-<div style="padding: 32px 8px; display: flex; flex-direction: column; gap: 6px; text-align: center;"><dt style="font-size: 14px; color: #6F6D6B; letter-spacing: 0.1em; order: 2;">深耕企業禮品</dt><dd style="margin: 0; font-family: 'EB Garamond', serif; font-size: 38px; line-height: 1.2; order: 1;">Since 2017</dd></div>
-<div style="padding: 32px 8px; display: flex; flex-direction: column; gap: 6px; text-align: center;"><dt style="font-size: 14px; color: #6F6D6B; letter-spacing: 0.1em; order: 2;">服務產業類別</dt><dd style="margin: 0; font-family: 'EB Garamond', serif; font-size: 38px; line-height: 1.2; order: 1;">10+</dd></div>
-<div style="padding: 32px 8px; display: flex; flex-direction: column; gap: 6px; text-align: center;"><dt style="font-size: 14px; color: #6F6D6B; letter-spacing: 0.1em; order: 2;">完成專案數量</dt><dd style="margin: 0; font-family: 'EB Garamond', serif; font-size: 38px; line-height: 1.2; order: 1;">500+</dd></div>
-<div style="padding: 32px 8px; display: flex; flex-direction: column; gap: 6px; text-align: center;"><dt style="font-size: 14px; color: #6F6D6B; letter-spacing: 0.1em; order: 2;">服務國家</dt><dd style="margin: 0; font-family: 'EB Garamond', serif; font-size: 38px; line-height: 1.2; order: 1;">8+</dd></div>
+<div style="padding: 32px 8px; display: flex; flex-direction: column; gap: 6px; text-align: center;"><dt style="font-size: 14px; color: #6F6D6B; letter-spacing: 0.1em; order: 2;">深耕企業禮品</dt><dd style="margin: 0; font-family: 'EB Garamond', serif; font-size: 38px; line-height: 1.2; order: 1;" class="cnt">Since 2017</dd></div>
+<div style="padding: 32px 8px; display: flex; flex-direction: column; gap: 6px; text-align: center;"><dt style="font-size: 14px; color: #6F6D6B; letter-spacing: 0.1em; order: 2;">服務產業類別</dt><dd style="margin: 0; font-family: 'EB Garamond', serif; font-size: 38px; line-height: 1.2; order: 1;" class="cnt">10+</dd></div>
+<div style="padding: 32px 8px; display: flex; flex-direction: column; gap: 6px; text-align: center;"><dt style="font-size: 14px; color: #6F6D6B; letter-spacing: 0.1em; order: 2;">完成專案數量</dt><dd style="margin: 0; font-family: 'EB Garamond', serif; font-size: 38px; line-height: 1.2; order: 1;" class="cnt">500+</dd></div>
+<div style="padding: 32px 8px; display: flex; flex-direction: column; gap: 6px; text-align: center;"><dt style="font-size: 14px; color: #6F6D6B; letter-spacing: 0.1em; order: 2;">服務國家</dt><dd style="margin: 0; font-family: 'EB Garamond', serif; font-size: 38px; line-height: 1.2; order: 1;" class="cnt">8+</dd></div>
 </dl>
 </section>
 
@@ -311,70 +367,70 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 <p class="ind-line" style="margin: 0; max-width: 980px; font-family: 'Noto Serif TC', serif; font-size: 17px; line-height: 2.3; letter-spacing: 0.16em; color: #4B4948;">奢侈精品<span class="ind-dot">·</span>醫療製藥<span class="ind-dot">·</span>金融保險與顧問<span class="ind-dot">·</span>時尚品牌<span class="ind-dot">·</span>飲料酒類<span class="ind-dot">·</span>餐飲服務<br class="br-d"><span class="ind-dot dot-m">·</span>食品消費<span class="ind-dot">·</span>教育機構<span class="ind-dot">·</span>工業與能源<span class="ind-dot">·</span>房地產<span class="ind-dot">·</span>公家機關</p>
 <div class="mq" role="region" aria-label="合作客戶" style="margin-top: 24px; padding: 28px 0; border-top: 1px solid #E4DCCF; border-bottom: 1px solid #E4DCCF; overflow: hidden;">
 <div class="mq-track" style="display: flex; align-items: center; width: max-content;">
-<img class="mq-logo" src="assets/clients/rolls-royce.png" alt="Rolls-Royce" height="40" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/bell-ross.png" alt="Bell &amp; Ross" height="23" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/johnnie-walker.png" alt="Johnnie Walker" height="35" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/johnson-johnson.png" alt="Johnson &amp; Johnson" height="16" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/deloitte.png" alt="Deloitte" height="19" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/hearts-on-fire.png" alt="HEARTS ON FIRE" height="16" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/curators-of-travel.png" alt="Curators of Travel" height="24" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/roche.png" alt="Roche" height="32" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/auchentoshan.png" alt="Auchentoshan" height="23" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/ash.png" alt="ASH" height="40" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/nan-shan.png" alt="南山人壽 NAN SHAN" height="36" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/kuno.png" alt="K.UNO JAPAN" height="29" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/boston-scientific.png" alt="Boston Scientific" height="26" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/niseko.png" alt="Niseko" height="22" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/swatch.png" alt="Swatch" height="18" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/sinopac.png" alt="永豐金控 SinoPac Holdings" height="23" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/straumann.png" alt="Straumann" height="21" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/meimen.png" alt="梅門 MEIMEN" height="40" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/danny-wine.png" alt="丹尼酒窖 Danny Wine Collection" height="37" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/jins.png" alt="JINS" height="25" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/amgen.png" alt="Amgen" height="22" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/ul-solutions.png" alt="UL Solutions" height="28" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/mr-brown.png" alt="伯朗咖啡 Mr. Brown Café" height="26" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/botox.png" alt="BOTOX" height="21" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/jim-beam.png" alt="Jim Beam" height="39" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/standard-foods.png" alt="佳格 Standard Foods" height="40" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/maicoin.png" alt="MaiCoin" height="19" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/hexa.png" alt="和暄綠能 HEXA Renewables" height="28" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/true-blossom.png" alt="誠佳祥建設 True Blossom Development" height="39" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/coinw.png" alt="CoinW" height="22" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/gymboree.png" alt="Gymboree Play &amp; Music" height="38" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/mangogo.png" alt="芒狗狗" height="23" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/rolls-royce.png" alt="" aria-hidden="true" height="40" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/bell-ross.png" alt="" aria-hidden="true" height="23" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/johnnie-walker.png" alt="" aria-hidden="true" height="35" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/johnson-johnson.png" alt="" aria-hidden="true" height="16" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/deloitte.png" alt="" aria-hidden="true" height="19" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/hearts-on-fire.png" alt="" aria-hidden="true" height="16" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/curators-of-travel.png" alt="" aria-hidden="true" height="24" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/roche.png" alt="" aria-hidden="true" height="32" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/auchentoshan.png" alt="" aria-hidden="true" height="23" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/ash.png" alt="" aria-hidden="true" height="40" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/nan-shan.png" alt="" aria-hidden="true" height="36" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/kuno.png" alt="" aria-hidden="true" height="29" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/boston-scientific.png" alt="" aria-hidden="true" height="26" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/niseko.png" alt="" aria-hidden="true" height="22" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/swatch.png" alt="" aria-hidden="true" height="18" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/sinopac.png" alt="" aria-hidden="true" height="23" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/straumann.png" alt="" aria-hidden="true" height="21" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/meimen.png" alt="" aria-hidden="true" height="40" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/danny-wine.png" alt="" aria-hidden="true" height="37" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/jins.png" alt="" aria-hidden="true" height="25" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/amgen.png" alt="" aria-hidden="true" height="22" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/ul-solutions.png" alt="" aria-hidden="true" height="28" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/mr-brown.png" alt="" aria-hidden="true" height="26" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/botox.png" alt="" aria-hidden="true" height="21" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/jim-beam.png" alt="" aria-hidden="true" height="39" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/standard-foods.png" alt="" aria-hidden="true" height="40" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/maicoin.png" alt="" aria-hidden="true" height="19" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/hexa.png" alt="" aria-hidden="true" height="28" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/true-blossom.png" alt="" aria-hidden="true" height="39" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/coinw.png" alt="" aria-hidden="true" height="22" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/gymboree.png" alt="" aria-hidden="true" height="38" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
-<img class="mq-logo" src="assets/clients/mangogo.png" alt="" aria-hidden="true" height="23" loading="lazy" style="width: auto; display: block; flex: none; margin: 0 34px; opacity: 0.42;">
+<span class="mq-item"><img class="mq-logo" src="assets/clients/rolls-royce.png" alt="Rolls-Royce" height="40" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/rolls-royce-c.png" alt="" aria-hidden="true" height="40" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/bell-ross.png" alt="Bell &amp; Ross" height="23" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/bell-ross-c.png" alt="" aria-hidden="true" height="23" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/johnnie-walker.png" alt="Johnnie Walker" height="35" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/johnnie-walker-c.png" alt="" aria-hidden="true" height="35" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/johnson-johnson.png" alt="Johnson &amp; Johnson" height="16" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/johnson-johnson-c.png" alt="" aria-hidden="true" height="16" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/deloitte.png" alt="Deloitte" height="19" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/deloitte-c.png" alt="" aria-hidden="true" height="19" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/hearts-on-fire.png" alt="HEARTS ON FIRE" height="16" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/hearts-on-fire-c.png" alt="" aria-hidden="true" height="16" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/curators-of-travel.png" alt="Curators of Travel" height="24" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/curators-of-travel-c.png" alt="" aria-hidden="true" height="24" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/roche.png" alt="Roche" height="32" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/roche-c.png" alt="" aria-hidden="true" height="32" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/auchentoshan.png" alt="Auchentoshan" height="23" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/auchentoshan-c.png" alt="" aria-hidden="true" height="23" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/ash.png" alt="ASH" height="40" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/ash-c.png" alt="" aria-hidden="true" height="40" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/nan-shan.png" alt="南山人壽 NAN SHAN" height="36" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/nan-shan-c.png" alt="" aria-hidden="true" height="36" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/kuno.png" alt="K.UNO JAPAN" height="29" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/kuno-c.png" alt="" aria-hidden="true" height="29" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/boston-scientific.png" alt="Boston Scientific" height="26" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/boston-scientific-c.png" alt="" aria-hidden="true" height="26" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/niseko.png" alt="Niseko" height="22" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/niseko-c.png" alt="" aria-hidden="true" height="22" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/swatch.png" alt="Swatch" height="18" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/swatch-c.png" alt="" aria-hidden="true" height="18" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/sinopac.png" alt="永豐金控 SinoPac Holdings" height="23" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/sinopac-c.png" alt="" aria-hidden="true" height="23" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/straumann.png" alt="Straumann" height="21" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/straumann-c.png" alt="" aria-hidden="true" height="21" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/meimen.png" alt="梅門 MEIMEN" height="40" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/meimen-c.png" alt="" aria-hidden="true" height="40" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/danny-wine.png" alt="丹尼酒窖 Danny Wine Collection" height="37" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/danny-wine-c.png" alt="" aria-hidden="true" height="37" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/jins.png" alt="JINS" height="25" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/jins-c.png" alt="" aria-hidden="true" height="25" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/amgen.png" alt="Amgen" height="22" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/amgen-c.png" alt="" aria-hidden="true" height="22" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/ul-solutions.png" alt="UL Solutions" height="28" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/ul-solutions-c.png" alt="" aria-hidden="true" height="28" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/mr-brown.png" alt="伯朗咖啡 Mr. Brown Café" height="26" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/mr-brown-c.png" alt="" aria-hidden="true" height="26" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/botox.png" alt="BOTOX" height="21" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/botox-c.png" alt="" aria-hidden="true" height="21" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/jim-beam.png" alt="Jim Beam" height="39" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/jim-beam-c.png" alt="" aria-hidden="true" height="39" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/standard-foods.png" alt="佳格 Standard Foods" height="40" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/standard-foods-c.png" alt="" aria-hidden="true" height="40" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/maicoin.png" alt="MaiCoin" height="19" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/maicoin-c.png" alt="" aria-hidden="true" height="19" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/hexa.png" alt="和暄綠能 HEXA Renewables" height="28" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/hexa-c.png" alt="" aria-hidden="true" height="28" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/true-blossom.png" alt="誠佳祥建設 True Blossom Development" height="39" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/true-blossom-c.png" alt="" aria-hidden="true" height="39" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/coinw.png" alt="CoinW" height="22" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/coinw-c.png" alt="" aria-hidden="true" height="22" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/gymboree.png" alt="Gymboree Play &amp; Music" height="38" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/gymboree-c.png" alt="" aria-hidden="true" height="38" loading="lazy"></span>
+<span class="mq-item"><img class="mq-logo" src="assets/clients/mangogo.png" alt="芒狗狗" height="23" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/mangogo-c.png" alt="" aria-hidden="true" height="23" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/rolls-royce.png" alt="" height="40" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/rolls-royce-c.png" alt="" aria-hidden="true" height="40" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/bell-ross.png" alt="" height="23" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/bell-ross-c.png" alt="" aria-hidden="true" height="23" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/johnnie-walker.png" alt="" height="35" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/johnnie-walker-c.png" alt="" aria-hidden="true" height="35" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/johnson-johnson.png" alt="" height="16" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/johnson-johnson-c.png" alt="" aria-hidden="true" height="16" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/deloitte.png" alt="" height="19" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/deloitte-c.png" alt="" aria-hidden="true" height="19" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/hearts-on-fire.png" alt="" height="16" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/hearts-on-fire-c.png" alt="" aria-hidden="true" height="16" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/curators-of-travel.png" alt="" height="24" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/curators-of-travel-c.png" alt="" aria-hidden="true" height="24" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/roche.png" alt="" height="32" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/roche-c.png" alt="" aria-hidden="true" height="32" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/auchentoshan.png" alt="" height="23" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/auchentoshan-c.png" alt="" aria-hidden="true" height="23" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/ash.png" alt="" height="40" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/ash-c.png" alt="" aria-hidden="true" height="40" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/nan-shan.png" alt="" height="36" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/nan-shan-c.png" alt="" aria-hidden="true" height="36" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/kuno.png" alt="" height="29" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/kuno-c.png" alt="" aria-hidden="true" height="29" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/boston-scientific.png" alt="" height="26" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/boston-scientific-c.png" alt="" aria-hidden="true" height="26" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/niseko.png" alt="" height="22" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/niseko-c.png" alt="" aria-hidden="true" height="22" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/swatch.png" alt="" height="18" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/swatch-c.png" alt="" aria-hidden="true" height="18" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/sinopac.png" alt="" height="23" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/sinopac-c.png" alt="" aria-hidden="true" height="23" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/straumann.png" alt="" height="21" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/straumann-c.png" alt="" aria-hidden="true" height="21" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/meimen.png" alt="" height="40" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/meimen-c.png" alt="" aria-hidden="true" height="40" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/danny-wine.png" alt="" height="37" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/danny-wine-c.png" alt="" aria-hidden="true" height="37" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/jins.png" alt="" height="25" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/jins-c.png" alt="" aria-hidden="true" height="25" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/amgen.png" alt="" height="22" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/amgen-c.png" alt="" aria-hidden="true" height="22" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/ul-solutions.png" alt="" height="28" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/ul-solutions-c.png" alt="" aria-hidden="true" height="28" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/mr-brown.png" alt="" height="26" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/mr-brown-c.png" alt="" aria-hidden="true" height="26" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/botox.png" alt="" height="21" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/botox-c.png" alt="" aria-hidden="true" height="21" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/jim-beam.png" alt="" height="39" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/jim-beam-c.png" alt="" aria-hidden="true" height="39" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/standard-foods.png" alt="" height="40" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/standard-foods-c.png" alt="" aria-hidden="true" height="40" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/maicoin.png" alt="" height="19" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/maicoin-c.png" alt="" aria-hidden="true" height="19" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/hexa.png" alt="" height="28" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/hexa-c.png" alt="" aria-hidden="true" height="28" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/true-blossom.png" alt="" height="39" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/true-blossom-c.png" alt="" aria-hidden="true" height="39" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/coinw.png" alt="" height="22" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/coinw-c.png" alt="" aria-hidden="true" height="22" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/gymboree.png" alt="" height="38" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/gymboree-c.png" alt="" aria-hidden="true" height="38" loading="lazy"></span>
+<span class="mq-item" aria-hidden="true"><img class="mq-logo" src="assets/clients/mangogo.png" alt="" height="23" loading="lazy" style="width: auto; display: block; opacity: 0.42;"><img class="mq-c" src="assets/clients/mangogo-c.png" alt="" aria-hidden="true" height="23" loading="lazy"></span>
 </div>
 </div>
 </section>
@@ -612,7 +668,7 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 <section id="contact" style="max-width: 1240px; margin: 0 auto; padding: 120px 32px;">
 <div class="kv-lines ct-box" style="border: 1px solid #E4DCCF; padding: 72px 56px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center;">
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px;">
-<p style="margin: 0; font-family: 'EB Garamond', serif; font-style: italic; font-size: 26px; color: #7D5F3C;">the meaningful one.</p>
+<img src="assets/the-meaningful-one.png" alt="the meaningful one." style="width: 180px; height: auto; display: block;">
 <h2 style="margin: 0; font-family: 'Noto Serif TC', serif; font-weight: 400; font-size: clamp(28px, 3.2vw, 38px); line-height: 1.5; letter-spacing: 0.08em;">預約30分鐘<br>企業禮品需求診斷</h2>
 <p style="margin: 0; color: #4B4948;">不收費，只需告訴我們您的品牌目標、預算與方向，<br class="br-d">我們將於1-2個工作天回覆您。</p>
 <a target="_blank" rel="noopener" href="https://calendar.app.google/cCXVzgeoHbBhTNv5A" class="btn-f" style="align-self: flex-start; text-decoration: none; background: #4B4948; color: #F8F5EF; padding: 13px 40px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; letter-spacing: 0.14em;">立即預約</a>
@@ -624,12 +680,12 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 </div>
 <ul style="width: 100%; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 22px;">
 <li style="display: flex; flex-direction: column; gap: 2px;">
-<div class="nc-row" style="display: flex; align-items: baseline; gap: 12px;"><span style="flex: none; font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.24em; color: #7D5F3C;">EMAIL</span><span aria-hidden="true" class="nc-dots" style="flex: 1 1 auto; border-bottom: 1px dotted #C9B48F; transform: translateY(-5px);"></span><a href="mailto:connect@crystalandco.co" class="nc-link" style="flex: none; font-size: 14px; letter-spacing: 0.08em; color: #7D5F3C;">寄信給我們</a></div>
+<div class="nc-row" style="display: flex; align-items: baseline; gap: 12px;"><span class="nc-lab" style="flex: none; font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.24em; color: #7D5F3C;">EMAIL</span><span aria-hidden="true" class="nc-dots" style="flex: 1 1 auto; border-bottom: 1px dotted #C9B48F; transform: translateY(-5px);"></span><a href="mailto:connect@crystalandco.co" class="nc-link" style="flex: none; font-size: 14px; letter-spacing: 0.08em; color: #7D5F3C;">寄信給我們</a></div>
 <span class="nc-mail" style="align-self: flex-end; font-size: 13px; color: #6F6D6B;">connect@crystalandco.co</span>
 </li>
-<li class="nc-row" style="display: flex; align-items: baseline; gap: 12px;"><span style="flex: none; font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.24em; color: #7D5F3C;">OFFICIAL LINE</span><span aria-hidden="true" class="nc-dots" style="flex: 1 1 auto; border-bottom: 1px dotted #C9B48F; transform: translateY(-5px);"></span><a target="_blank" rel="noopener" href="https://line.me/R/ti/p/%40968veimr" class="nc-link" style="flex: none; font-size: 14px; letter-spacing: 0.08em; color: #7D5F3C;">加入LINE官方帳號</a></li>
-<li class="nc-row" style="display: flex; align-items: baseline; gap: 12px;"><span style="flex: none; font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.24em; color: #7D5F3C;">INSTAGRAM</span><span aria-hidden="true" class="nc-dots" style="flex: 1 1 auto; border-bottom: 1px dotted #C9B48F; transform: translateY(-5px);"></span><a target="_blank" rel="noopener" href="https://www.instagram.com/crystalandcollective/" class="nc-link" style="flex: none; font-size: 14px; letter-spacing: 0.08em; color: #7D5F3C;">看最新消息＆作品</a></li>
-<li class="nc-row" style="display: flex; align-items: baseline; gap: 12px;"><span style="flex: none; font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.24em; color: #7D5F3C;">CATALOGUE</span><span aria-hidden="true" class="nc-dots" style="flex: 1 1 auto; border-bottom: 1px dotted #C9B48F; transform: translateY(-5px);"></span><a target="_blank" rel="noopener" href="https://catalogue.crystalandco.co" class="nc-link" style="flex: none; font-size: 14px; letter-spacing: 0.08em; color: #7D5F3C;">瀏覽晶選良品</a></li>
+<li class="nc-row" style="display: flex; align-items: baseline; gap: 12px;"><span class="nc-lab" style="flex: none; font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.24em; color: #7D5F3C;">OFFICIAL LINE</span><span aria-hidden="true" class="nc-dots" style="flex: 1 1 auto; border-bottom: 1px dotted #C9B48F; transform: translateY(-5px);"></span><a target="_blank" rel="noopener" href="https://line.me/R/ti/p/%40968veimr" class="nc-link" style="flex: none; font-size: 14px; letter-spacing: 0.08em; color: #7D5F3C;">加入LINE官方帳號</a></li>
+<li class="nc-row" style="display: flex; align-items: baseline; gap: 12px;"><span class="nc-lab" style="flex: none; font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.24em; color: #7D5F3C;">INSTAGRAM</span><span aria-hidden="true" class="nc-dots" style="flex: 1 1 auto; border-bottom: 1px dotted #C9B48F; transform: translateY(-5px);"></span><a target="_blank" rel="noopener" href="https://www.instagram.com/crystalandcollective/" class="nc-link" style="flex: none; font-size: 14px; letter-spacing: 0.08em; color: #7D5F3C;">看最新消息＆作品</a></li>
+<li class="nc-row" style="display: flex; align-items: baseline; gap: 12px;"><span class="nc-lab" style="flex: none; font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.24em; color: #7D5F3C;">CATALOGUE</span><span aria-hidden="true" class="nc-dots" style="flex: 1 1 auto; border-bottom: 1px dotted #C9B48F; transform: translateY(-5px);"></span><a target="_blank" rel="noopener" href="https://catalogue.crystalandco.co" class="nc-link" style="flex: none; font-size: 14px; letter-spacing: 0.08em; color: #7D5F3C;">瀏覽晶選良品</a></li>
 </ul>
 </div>
 </div>
@@ -696,6 +752,10 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
       old.replaceWith(el);
       count.textContent = (i + 1) + ' / ' + items.length;
     }
+    box.addEventListener('click', function (e) {
+      if (e.target.closest('button')) return;
+      openLb(items, i, function (n) { show(n); });
+    });
     box.querySelectorAll('button[data-dir]').forEach(function (b) {
       b.addEventListener('click', function () { show(i + Number(b.getAttribute('data-dir'))); });
     });
@@ -708,6 +768,88 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
       x0 = null;
     });
   });
+
+  /* lightbox */
+  var lb = document.createElement('div');
+  lb.className = 'lb'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', '案例照片');
+  var arrow = function (d) { return '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="' + d + '"/></svg>'; };
+  lb.innerHTML = '<button type="button" class="lb-close" aria-label="關閉">' + arrow('M6 6l12 12M18 6L6 18') + '</button>' +
+    '<button type="button" class="lb-prev" aria-label="上一張">' + arrow('M15 5l-7 7 7 7') + '</button>' +
+    '<div class="lb-stage"></div>' +
+    '<button type="button" class="lb-next" aria-label="下一張">' + arrow('M9 5l7 7-7 7') + '</button>' +
+    '<p class="lb-count"></p>';
+  document.body.appendChild(lb);
+  var lbItems = [], lbI = 0, lbSync = null, lastFocus = null;
+  function lbShow(n) {
+    lbI = (n + lbItems.length) % lbItems.length;
+    var it = lbItems[lbI], el;
+    if (it.video) { el = document.createElement('video'); el.autoplay = true; el.muted = true; el.loop = true; el.playsInline = true; el.setAttribute('playsinline', ''); el.controls = true; }
+    else { el = document.createElement('img'); el.alt = it.alt; }
+    el.className = 'lb-media'; el.src = it.src;
+    var st = lb.querySelector('.lb-stage'); st.innerHTML = ''; st.appendChild(el);
+    lb.querySelector('.lb-count').textContent = (lbI + 1) + ' / ' + lbItems.length;
+    if (lbSync) lbSync(lbI);
+  }
+  function openLb(items, i, sync) { lbItems = items; lbSync = sync; lastFocus = document.activeElement; lb.classList.add('open'); document.body.style.overflow = 'hidden'; lbShow(i); lb.querySelector('.lb-close').focus(); }
+  function closeLb() { lb.classList.remove('open'); document.body.style.overflow = ''; lb.querySelector('.lb-stage').innerHTML = ''; if (lastFocus) lastFocus.focus(); }
+  lb.querySelector('.lb-close').addEventListener('click', closeLb);
+  lb.querySelector('.lb-prev').addEventListener('click', function () { lbShow(lbI - 1); });
+  lb.querySelector('.lb-next').addEventListener('click', function () { lbShow(lbI + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb || e.target.classList.contains('lb-stage')) closeLb(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') lbShow(lbI - 1);
+    if (e.key === 'ArrowRight') lbShow(lbI + 1);
+  });
+  var lx = null;
+  lb.addEventListener('touchstart', function (e) { lx = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) { if (lx === null) return; var dx = e.changedTouches[0].clientX - lx; if (Math.abs(dx) > 40) lbShow(lbI + (dx < 0 ? 1 : -1)); lx = null; });
+
+  /* mobile menu */
+  var tog = document.querySelector('.nav-toggle'), links = document.getElementById('nav-links');
+  if (tog && links) {
+    tog.addEventListener('click', function () { var o = links.classList.toggle('open'); tog.setAttribute('aria-expanded', o ? 'true' : 'false'); tog.setAttribute('aria-label', o ? '關閉選單' : '開啟選單'); });
+    links.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { links.classList.remove('open'); tog.setAttribute('aria-expanded', 'false'); }); });
+  }
+
+  /* header shadow on scroll */
+  var head = document.querySelector('.site-head');
+  var onScroll = function () { if (head) head.classList.toggle('scrolled', window.scrollY > 8); };
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window)) return;
+
+  /* scroll reveal */
+  var sel = ['section:not(#top) h2', 'section:not(#top) h2 + p', '.find-fit-box > div', 'article', '#voices figure', '#about li', '.ind-line', '.mq', '.nc-card li', '#contact .ct-box > div:first-child', 'section[aria-label] dl > div'];
+  var els = [];
+  sel.forEach(function (q) { document.querySelectorAll(q).forEach(function (el) { if (els.indexOf(el) < 0) els.push(el); }); });
+  if (!reduce) {
+    document.documentElement.classList.add('js-rv');
+    els.forEach(function (el) {
+      el.classList.add('rv');
+      var sib = Array.prototype.indexOf.call(el.parentNode.children, el);
+      el.style.transitionDelay = (Math.min(sib, 5) * 90) + 'ms';
+    });
+    var io = new IntersectionObserver(function (ents) {
+      ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  }
+
+  /* count-up */
+  var cio = new IntersectionObserver(function (ents) {
+    ents.forEach(function (en) {
+      if (!en.isIntersecting) return; cio.unobserve(en.target);
+      var el = en.target, m = el.textContent.match(/^(\D*)(\d+)(\D*)$/); if (!m || reduce) return;
+      var end = +m[2], start = end > 1000 ? end - 17 : 0, t0 = null, dur = 1600;
+      var step = function (t) { if (!t0) t0 = t; var p = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+        el.textContent = m[1] + Math.round(start + (end - start) * e) + m[3]; if (p < 1) requestAnimationFrame(step); };
+      requestAnimationFrame(step);
+    });
+  }, { threshold: 0.6 });
+  document.querySelectorAll('.cnt').forEach(function (el) { cio.observe(el); });
 })();
 </script>
 </body>
