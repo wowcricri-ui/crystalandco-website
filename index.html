@@ -151,6 +151,10 @@ a{color:#4B4948}a:hover{color:#7D5F3C}
 .nc-lab{transition:color .3s ease}
 .nc-row:hover .nc-lab{color:#B89B72 !important}
 .nav-toggle{display:none}
+.spot{position:relative;isolation:isolate}
+.spot::before{content:'';position:absolute;inset:-1px;z-index:2;border-radius:inherit;padding:1.5px;pointer-events:none;background:radial-gradient(240px circle at var(--x,-999px) var(--y,-999px),rgba(176,142,96,.95),rgba(201,170,120,.45) 38%,transparent 70%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);opacity:0;transition:opacity .45s ease}
+.spot::after{content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(340px circle at var(--x,-999px) var(--y,-999px),rgba(232,208,160,.26),rgba(232,208,160,.08) 45%,transparent 70%);opacity:0;transition:opacity .45s ease}
+@media (hover:hover){.spot-grid:hover .spot::before,.spot-grid:hover .spot::after{opacity:1}}
 .kv-about{background-color:#F8F5EF;background-image:linear-gradient(90deg,rgba(253,251,247,0.94) 0%,rgba(253,251,247,0.82) 42%,rgba(253,251,247,0.1) 72%),url(assets/kv-about.jpg);background-position:center,right center;background-size:cover,cover;background-repeat:no-repeat}
 .kv-lines{background-color:#FDFBF7;background-image:linear-gradient(90deg,rgba(253,251,247,0.55),rgba(253,251,247,0.25)),url(assets/kv-contact.jpg);background-position:center,center;background-size:cover,cover;background-repeat:no-repeat}
 .btn-o{transition:background-color .25s ease,color .25s ease}
@@ -614,9 +618,9 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}img{max-width:100%}
 </div>
 <a href="#brands" class="btn-o" style="text-decoration: none; color: #4B4948; border: 1px solid #4B4948; padding: 11px 28px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; letter-spacing: 0.1em; font-size: 15px;">認識所有合作品牌 →</a>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 28px; align-items: stretch;">
+<div class="spot-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 28px; align-items: stretch;">
 
-<article style="background: #FDFBF7; border: 1px solid #E4DCCF; padding: 40px 36px; display: flex; flex-direction: column; gap: 20px;">
+<article class="spot" style="background: #FDFBF7; border: 1px solid #E4DCCF; border-radius: 18px; padding: 40px 36px; display: flex; flex-direction: column; gap: 20px;">
 <div style="height: 96px; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #E4DCCF; padding-bottom: 24px;"><img loading="lazy" src="assets/brand-fengshen.png" alt="蜂神森林養蜂場 Logo" style="width: 230px; height: auto; max-width: 100%; object-fit: contain; display: block; mix-blend-mode: multiply;"></div>
 <h3 style="margin: 0; font-family: 'Noto Serif TC', serif; font-weight: 400; font-size: 22px; letter-spacing: 0.08em;">蜂神森林養蜂場</h3>
 <p style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 17px; line-height: 1.8; color: #7D5F3C;">有時，一份純粹的初心，能帶領我們回到最本真的地方。</p>
@@ -624,7 +628,7 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}img{max-width:100%}
 <a target="_blank" rel="noopener" href="https://www.foresthoney.tw/" style="margin-top: auto; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; letter-spacing: 0.06em;">前往品牌官網 →</a>
 </article>
 
-<article style="background: #FDFBF7; border: 1px solid #E4DCCF; padding: 40px 36px; display: flex; flex-direction: column; gap: 20px;">
+<article class="spot" style="background: #FDFBF7; border: 1px solid #E4DCCF; border-radius: 18px; padding: 40px 36px; display: flex; flex-direction: column; gap: 20px;">
 <div style="height: 96px; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #E4DCCF; padding-bottom: 24px;"><img loading="lazy" src="assets/brand-ystudio.png" alt="物外YSTUDIO Logo" style="width: 200px; height: auto; max-width: 100%; object-fit: contain; display: block; mix-blend-mode: multiply;"></div>
 <h3 style="margin: 0; font-family: 'Noto Serif TC', serif; font-weight: 400; font-size: 22px; letter-spacing: 0.08em;">物外YSTUDIO</h3>
 <p style="margin: 0; font-family: 'EB Garamond', 'Noto Serif TC', serif; font-size: 20px; line-height: 1.7; letter-spacing: 0.03em; color: #7D5F3C;">The Weight of Words</p>
@@ -632,7 +636,7 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}img{max-width:100%}
 <a target="_blank" rel="noopener" href="https://www.ystudiostyle.com.tw" style="margin-top: auto; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; letter-spacing: 0.06em;">前往品牌官網 →</a>
 </article>
 
-<article aria-label="即將登場的合作品牌" style="background: rgba(253,251,247,0.4); border: 1px dashed #D9CFBF; padding: 40px 36px; min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center;">
+<article class="spot" aria-label="即將登場的合作品牌" style="background: rgba(253,251,247,0.4); border: 1px dashed #D9CFBF; border-radius: 18px; padding: 40px 36px; min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center;">
 <img src="assets/icon-star.png" alt="" style="width: 14px; height: 14px; opacity: 0.35;">
 <p style="margin: 0; font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.3em; color: #B89B72;">COMING SOON</p>
 <p style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 16px; letter-spacing: 0.08em; color: #6F6D6B;">下一個好品牌，正在路上。</p>
@@ -812,6 +816,14 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}img{max-width:100%}
     tog.addEventListener('click', function () { var o = links.classList.toggle('open'); tog.setAttribute('aria-expanded', o ? 'true' : 'false'); tog.setAttribute('aria-label', o ? '關閉選單' : '開啟選單'); });
     links.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { links.classList.remove('open'); tog.setAttribute('aria-expanded', 'false'); }); });
   }
+
+  /* spotlight cards */
+  document.querySelectorAll('.spot-grid').forEach(function (g) {
+    var cards = g.querySelectorAll('.spot');
+    g.addEventListener('mousemove', function (e) {
+      cards.forEach(function (c) { var r = c.getBoundingClientRect(); c.style.setProperty('--x', (e.clientX - r.left) + 'px'); c.style.setProperty('--y', (e.clientY - r.top) + 'px'); });
+    });
+  });
 
   /* header shadow on scroll */
   var head = document.querySelector('.site-head');
